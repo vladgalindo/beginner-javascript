@@ -18,7 +18,7 @@ function handleCardButtonClick(event) {
     <p>${desc}</p>
   `;
   // show the modal
-  modalOuter.classList.add('open');
+  modalOuter.classList.add('open :po');
 }
 
 cardButtons.forEach(button =>

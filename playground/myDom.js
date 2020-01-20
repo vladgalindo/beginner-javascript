@@ -10,14 +10,26 @@ p.addEventListener('click', () => {
 })
 
 let emoji = ":gym";
-document.append()
+document.append();
 const repButton = document.querySelector('#addReps');
 const repDisplayer = document.querySelector('#repsDisplay');
 const firstImg = document.querySelector('img');
-console.log(firstImg.dataset, Array.isArray(firstImg.dataset), typeof firstImg.dataset, Array.from(firstImg.dataset))
+console.log(firstImg.dataset, Array.isArray(firstImg.dataset), typeof firstImg.dataset, Array.from(firstImg.dataset));
 repButton.addEventListener('click', () =>  {
     repDisplayer.insertAdjacentText('afterend', emoji);
     const clonedImg = firstImg.cloneNode();
     firstImg.insertAdjacentElement('afterend', clonedImg);
 });
 
+const scopeTest = {
+    wife: 'Gisbel',
+    myEvent : function() {
+        console.log(this)
+    },
+    myImg: document.querySelector('.imgFrame'),
+
+};
+
+firstImg.addEventListener('click', scopeTest.myEvent);
+
+scopeTest.myEvent();
